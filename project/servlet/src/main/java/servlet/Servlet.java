@@ -1,3 +1,5 @@
+package servlet;
+
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
@@ -22,11 +24,13 @@ public class Servlet extends HttpServlet {
             String name = (String) names.nextElement();
             params.put(name, req.getParameter(name));
         }
+        String token = (String) req.getAttribute("token");
 //        ------------ 验证 ----------------
 //        ------------ 处理 ----------------
         Map<String, Object> con = new HashMap<>();
         con.put("data", params);
         con.put("code", 1);
+        con.put("token", token);
         con.put("msg", "ok");
 //        ------------ 返回 ----------------
         resp.setContentType("text/json; charset=utf-8");
