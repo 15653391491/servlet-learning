@@ -26,6 +26,12 @@
 
     <!--    项目依赖-->
     <dependencies>
+        <!-- https://mvnrepository.com/artifact/mysql/mysql-connector-java -->
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+            <version>8.0.28</version>
+        </dependency>
         <!--        具体依赖的jar包文件-->
         <dependency>
             <groupId>junit</groupId>
@@ -53,10 +59,10 @@
             <scope>provided</scope>
         </dependency>
         <dependency>
-        <groupId>org.json</groupId>
-        <artifactId>json</artifactId>
-        <version>20160810</version>
-    </dependency>
+            <groupId>org.json</groupId>
+            <artifactId>json</artifactId>
+            <version>20160810</version>
+        </dependency>
     </dependencies>
     <!--  在build中配置resources,来防止我们资源导出失败的问题  -->
     <build>

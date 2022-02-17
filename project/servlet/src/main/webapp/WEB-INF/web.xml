@@ -16,6 +16,32 @@
         <filter-name>FilterTest</filter-name>
         <url-pattern>/*</url-pattern>
     </filter-mapping>
+    <!--  sql  -->
+    <servlet>
+        <servlet-name>sqlTest</servlet-name>
+        <servlet-class>servlet.SqlTest</servlet-class>
+        <init-param>
+            <param-name>jdbcDriver</param-name>
+            <param-value>com.mysql.cj.jdbc.Driver</param-value>
+        </init-param>
+        <init-param>
+            <param-name>url</param-name>
+            <param-value>jdbc:mysql://124.70.44.128:3306/account</param-value>
+        </init-param>
+        <init-param>
+            <param-name>user</param-name>
+            <param-value>root</param-value>
+        </init-param>
+        <init-param>
+            <param-name>password</param-name>
+            <param-value>mysql</param-value>
+        </init-param>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>sqlTest</servlet-name>
+        <url-pattern>/sql</url-pattern>
+    </servlet-mapping>
+    <!--  servlet 测试  -->
     <servlet>
         <servlet-name>HelloWorld</servlet-name>
         <servlet-class>servlet.Servlet</servlet-class>
