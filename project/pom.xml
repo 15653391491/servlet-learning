@@ -26,6 +26,12 @@
 
     <!--    项目依赖-->
     <dependencies>
+        <!-- https://mvnrepository.com/artifact/me.welkinbai/BsonMapper -->
+        <dependency>
+            <groupId>me.welkinbai</groupId>
+            <artifactId>BsonMapper</artifactId>
+            <version>0.0.2</version>
+        </dependency>
         <!-- https://mvnrepository.com/artifact/org.mybatis/mybatis -->
         <dependency>
             <groupId>org.mybatis</groupId>

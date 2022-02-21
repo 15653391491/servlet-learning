@@ -50,4 +50,13 @@
         <servlet-name>HelloWorld</servlet-name>
         <url-pattern>/HelloWorld</url-pattern>
     </servlet-mapping>
+    <!--  mybatis 测试  -->
+    <servlet>
+        <servlet-name>mybatis</servlet-name>
+        <servlet-class>servlet.MybatisTest</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>mybatis</servlet-name>
+        <url-pattern>/mybatis</url-pattern>
+    </servlet-mapping>
 </web-app>

@@ -1,20 +1,24 @@
 package com;
 
-import java.sql.*;
+import mybatis.pojo.User;
+import mybatis.utils.MybatisUtils;
+import mybatis.mapper.UserDao;
 
-import com.mysql.BaseSqlClass;
+import org.apache.ibatis.session.SqlSession;
+
+import java.sql.SQLException;
+import java.util.List;
 
 public class MysqlTest {
-    private static final String user = "root";
-    private static final String password = "mysql";
-    private static final String url = "jdbc:mysql://124.70.44.128:3306/account";
-
-    MysqlTest() {
-
-    }
-
     public static void main(String[] args) {
-        BaseSqlClass bs = new BaseSqlClass("com.mysql.cj.jdbc.Driver", url, user, password);
-        System.out.println(bs.getCount());
+        SqlSession session = MybatisUtils.getSqlSession();
+        UserDao userMapper = session.getMapper(UserDao.class);
+        try {
+            List<User> users = userMapper.getUserList();
+            System.out.println(users);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
     }
 }
