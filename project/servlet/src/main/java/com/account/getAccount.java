@@ -38,14 +38,8 @@ public class getAccount extends HttpServlet {
         }
         List<User> users = userMapper.selectUserByAccount(user);
         int count = users.size();
-        int endIndex = count > page * limit + limit ? page * limit + limit : count;
-        users =
-        if (page * limit + limit <= count) {
-            users = users.subList(page * limit, page * limit + limit); // 分页
-        } else {
-
-        }
-
+        int endIndex = Math.min(count, (page - 1) * limit + limit);
+        users = users.subList((page - 1) * limit, endIndex);
         session.close();
         //        ------ 返回 ------
         HashMap<String, Object> result = new HashMap<>();
